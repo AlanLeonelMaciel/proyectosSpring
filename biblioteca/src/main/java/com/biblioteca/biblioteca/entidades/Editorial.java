@@ -1,4 +1,3 @@
-
 package com.biblioteca.biblioteca.entidades;
 
 import javax.persistence.Entity;
@@ -8,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Editorial {
+
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
@@ -32,5 +32,5 @@ public class Editorial {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
 }
