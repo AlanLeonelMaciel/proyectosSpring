@@ -1,0 +1,40 @@
+header {
+    background-image: url(../img/fondo.png);
+    background-size: cover; /* Ajusta la imagen al ancho del elemento y cubre toda la altura */
+    background-repeat: no-repeat;
+
+  
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 700px;
+   
+}
+.btn-light{
+    margin-bottom: 150px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 70px;
+}
+.nav-item-custom {
+    background-color: #B1CADC;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 0px 2px;
+    
+}
+
+.nav-item-custom:hover {
+    background-color: #8EAABE; /* Cambia el color al pasar el ratón por encima */
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade sombreado */
+}
+.alert-success{
+    margin-bottom: 0;
+}

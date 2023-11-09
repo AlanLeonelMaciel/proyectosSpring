@@ -1,34 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Ejemplo app spring</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="background-color: black; color: white;">
-    <div><p>Logrado con exito :D</p></div>
-    <h1>Tabla de Números Aleatorios</h1>
-    <table border="1" style="background-color: white;">
-        <tr>
-            <th style="background-color: black; color: white;">Columna 1</th>
-            <th style="background-color: black; color: white;">Columna 2</th>
-            <th style="background-color: black; color: white;">Columna 3</th>
-        </tr>
-        <tr>
-            <td style="color: black;">45451</td>
-            <td style="color: black;">54877</td>
-            <td style="color: black;">59894</td>
-        </tr>
-        <tr>
-            <td style="color: black;">5596</td>
-            <td style="color: black;">999</td>
-            <td style="color: black;">555</td>
-        </tr>
-        <tr>
-            <td style="color: black;">46565</td>
-            <td style="color: black;">55485</td>
-            <td style="color: black;">359659</td>
-        </tr>
-    </table>
-</body>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <title>Ejemplo app spring</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/index.css">
+
+    </head>
+    <body>
+        <nav class="bg-dark navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img class="logo" src="/img/iconoLibro.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown nav-item-custom">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Libros
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/libro/registrar">Crear libro</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown nav-item-custom">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Autores
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/autor/registrar">Subir Autor</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown nav-item-custom">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Editoriales
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"> <!-- Añade la clase dropdown-menu-end -->
+                            <li><a class="dropdown-item" href="/editorial/registrar">Subir editorial</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div th:if="${exito!=null}" class="alert alert-success" role="alert">
+            <p th:text="${exito}"></p>
+        </div>
+        <header>
+            <button type="button" class="btn btn-light">Listar</button>
+        </header>
+
+        <footer class="bg-dark text-light py-4">
+
+            <ul class="list-unstyled">
+                <li style="display: inline-block; margin-right: 50px;margin-left: 10px;"><p>Dirección: 123 Calle Ejemplo, Ciudad, País</p></li>
+                <li style="display: inline-block; margin-right: 50px;"><p>Teléfono: (123) 456-7890</p></li>
+                <li style="display: inline-block;"><a>Correo electronico miCorreo@ejemplo.com</a></li>
+
+
+            </ul>
+            <a href="#" class="btn btn-primary btn-sm" style="margin-right: 10px;line-height: normal;">
+                <i class="fas fa-arrow-up fa-xs"></i> Volver arriba
+            </a>
+
+
+
+
+
+
+        </footer>
+
+
+    </body>
 </html>

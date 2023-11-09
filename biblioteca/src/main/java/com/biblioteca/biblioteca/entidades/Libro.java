@@ -12,7 +12,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class Libro {
     @Id
-    private long isbn;
+    private Long isbn;
     private String titulo;
     private Integer ejemplares;
     

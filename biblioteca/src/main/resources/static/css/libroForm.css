@@ -1,0 +1,20 @@
+.containerrr{
+    background-image: url(../img/cargarLibro1.png);
+    background-size: cover; /* Ajusta la imagen al ancho del elemento y cubre toda la altura */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 550px;
+}
+.row {
+    width: 100%; 
+}
+
+.col-md-6{
+    margin-left: 100px;
+    width: 25%;
+}
+label{
+    color: white;
+}

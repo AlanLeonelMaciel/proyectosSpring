@@ -77,10 +77,10 @@ public class LibroServicio {
             throw new MiException("El titulo no puede estar vacio o nulo.");
         }
         if (idAutor.isEmpty() || idAutor == null) {
-            throw new MiException("El idAutor no puede estar vacio o nulo.");
+            throw new MiException("El Autor no puede estar vacio o nulo.");
         }
         if (idEditorial.isEmpty() || idEditorial == null) {
-            throw new MiException("El idEditorial no puede estar vacio o nulo.");
+            throw new MiException("El Editorial no puede estar vacio o nulo.");
         }
         if (isbn == null) {
             throw new MiException("El isbn no puede ser nulo.");

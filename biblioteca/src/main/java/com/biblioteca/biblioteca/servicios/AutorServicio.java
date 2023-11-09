@@ -1,8 +1,11 @@
 package com.biblioteca.biblioteca.servicios;
 
 import com.biblioteca.biblioteca.entidades.Autor;
+import com.biblioteca.biblioteca.entidades.Libro;
 import com.biblioteca.biblioteca.exceptions.MiException;
 import com.biblioteca.biblioteca.repositorios.AutorRepositorio;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +45,10 @@ public class AutorServicio {
             throw new MiException("El id no puede estar vacio o nulo.");
         }
 
+    }
+    public List<Autor> listarAutores() {
+        List<Autor> autores = new ArrayList();
+        autores = autorRepositorio.findAll();
+        return autores;
     }
 }

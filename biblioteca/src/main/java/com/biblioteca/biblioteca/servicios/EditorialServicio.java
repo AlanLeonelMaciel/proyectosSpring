@@ -3,6 +3,8 @@ package com.biblioteca.biblioteca.servicios;
 import com.biblioteca.biblioteca.entidades.Editorial;
 import com.biblioteca.biblioteca.exceptions.MiException;
 import com.biblioteca.biblioteca.repositorios.EditorialRepositorio;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,10 @@ public class EditorialServicio {
         if (id.isEmpty() || id == null) {
             throw new MiException("El id no puede estar vacio o nulo.");
         }
-
+    }
+    public List<Editorial> listarEditorials(){
+        List<Editorial> listaEditoriales=new ArrayList();
+        listaEditoriales=editorialRepositorio.findAll();
+        return listaEditoriales;
     }
 }
