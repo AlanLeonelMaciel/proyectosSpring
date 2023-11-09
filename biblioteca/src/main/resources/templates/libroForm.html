@@ -10,10 +10,13 @@
         <link rel="stylesheet" href="/css/libroForm.css">
     </head>
     <body>
+        <div th:if="${error!=null}" class="alert alert-danger" role="alert">
+                            <p th:text="${error}"></p>
+                        </div>
         <div class="containerrr">
             <div class="row justify-content-left">
                 <div class="col-md-6">
-                    <form action="/libro/registro" method="POST">
+                    <form class="shadow p-3 mb-5" action="/libro/registro" method="POST">
                         <div class="mb-3">
                             <label for="ingresoIsbn" class="form-label">Isbn</label>
                             <input placeholder="Ingresar isbn" name="isbn" type="text"id="ingresoIsbn" class="form-control">
@@ -36,10 +39,8 @@
                                         th:text="${editorial.nombre}"/>
                             </select>
                         </div>
-                        <div th:if="${error!=null}" class="alert alert-danger" role="alert">
-                            <p th:text="${error}"></p>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        
+                        <button type="submit" class="btn btn-primary">Subir</button>
                     </form>
                 </div>
             </div>
