@@ -27,7 +27,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/libro/registrar">Crear libro</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="/libro/listar">Listar libros</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
@@ -37,7 +37,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/autor/registrar">Subir Autor</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="/autor/listar">Listar autores</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
@@ -47,7 +47,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end"> <!-- Añade la clase dropdown-menu-end -->
                             <li><a class="dropdown-item" href="/editorial/registrar">Subir editorial</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="/editorial/listar">Listar editoriales</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
@@ -58,7 +58,7 @@
             <p th:text="${exito}"></p>
         </div>
         <header>
-            <button type="button" class="btn btn-light">Listar</button>
+            <button type="button" class="btn btn-light" onclick="window.location.href='/libro/listar'" >Listar</button>
         </header>
 
         <footer class="bg-dark text-light py-4">

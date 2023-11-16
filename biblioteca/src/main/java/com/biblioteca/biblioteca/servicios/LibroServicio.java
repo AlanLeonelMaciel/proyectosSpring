@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -46,6 +48,7 @@ public class LibroServicio {
         return libros;
     }
 
+    @Transactional
     public void modificarLibro(String titulo, Long isbn, String idAutor, String idEditorial, Integer ejemplares) throws MiException {
         validar(titulo, idAutor, idEditorial, isbn, ejemplares);
         Optional<Libro> respuestaLibro = libroRepositorio.findById(isbn);
@@ -89,4 +92,14 @@ public class LibroServicio {
             throw new MiException("Ejemplares no puede ser nulo.");
         }
     }
+
+    public Page<Libro> obtenerPaginaDeLibros(int page, int size) {
+        PageRequest pageable = PageRequest.of(page, size);
+        return libroRepositorio.findAll(pageable);
+    }
+
+    public Libro getOne(Long id) {
+        return libroRepositorio.getOne(id);
+    }
+;
 };

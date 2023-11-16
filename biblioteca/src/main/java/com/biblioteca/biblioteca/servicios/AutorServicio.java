@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,7 +28,7 @@ public class AutorServicio {
         autor.setNombre(nombre);
         autorRepositorio.save(autor);
     }
-
+    @Transactional
     public void modificarAutor(String nombre, String id) throws MiException {
         validar(nombre, id);
         Optional<Autor> optionalAutor = autorRepositorio.findById(id);
@@ -46,9 +48,17 @@ public class AutorServicio {
         }
 
     }
+
     public List<Autor> listarAutores() {
         List<Autor> autores = new ArrayList();
         autores = autorRepositorio.findAll();
         return autores;
+    }
+        public Page<Autor> obtenerPaginaDeAutores(int page, int size) {
+        PageRequest pageable = PageRequest.of(page, size);
+        return autorRepositorio.findAll(pageable);
+    }
+    public Autor getOne(String id) {
+        return autorRepositorio.getOne(id);
     }
 }

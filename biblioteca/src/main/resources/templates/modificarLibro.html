@@ -16,24 +16,24 @@
         <div class="containerrr">
             <div class="row justify-content-left">
                 <div class="col-md-6">
-                    <form class="shadow p-3 mb-5" action="/libro/registro" method="POST">
+                    <form class="shadow p-3 mb-5" th:action="@{/libro/modificar/__${libro.isbn}__}" method="POST">
                         <div class="mb-3">
                             <label for="ingresoIsbn" class="form-label">Isbn</label>
-                            <input placeholder="Ingresar isbn" name="isbn" type="text"id="ingresoIsbn" class="form-control">
+                            <input readonly th:value="${libro.isbn}" name="isbn" type="text"id="ingresoIsbn" class="form-control">
                             <label for="ingresoTitulo" class="form-label">Titulo</label>
-                            <input placeholder="Ingresar titulo" name="titulo" type="text"id="ingresoTitulo" class="form-control">
+                            <input th:value="${libro.titulo}" name="titulo" type="text"id="ingresoTitulo" class="form-control">
                             <label for="ingresoEjemplares" class="form-label">Ejemplares</label>
-                            <input placeholder="Ingresar ejemplares" name="ejemplares" type="text"id="ingresoEjemplares" class="form-control">
+                            <input th:value="${libro.ejemplares}" name="ejemplares" type="text"id="ingresoEjemplares" class="form-control">
                             <label for="idAutor" class="form-label">Autor</label>
                             <select class="form-select form-select-sm" name="idAutor" aria-label="Small select example">
-                                <option value="">Seleccionar autor</option>
+                                <option th:text="${libro.autor.nombre}" th:value="${libro.autor.id}"></option>
                                 <option th:each="autor : ${autores}"
                                         th:value="${autor.id}"
                                         th:text="${autor.nombre}"/>                               
                             </select>
                             <label for="idEditorial" class="form-label">Editorial</label>
                             <select class="form-select form-select-sm" name="idEditorial" aria-label="Small select example">
-                                <option value="">Seleccionar editorial</option>
+                                <option th:text="${libro.editorial.nombre}" th:value="${libro.editorial.id}"></option>
                                 <option th:each="editorial : ${editoriales}"
                                         th:value="${editorial.id}"
                                         th:text="${editorial.nombre}"/>

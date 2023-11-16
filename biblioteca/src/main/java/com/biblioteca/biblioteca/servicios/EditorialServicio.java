@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,7 +27,7 @@ public class EditorialServicio {
         editorial.setNombre(nombre);
         editorialRepositorio.save(editorial);
     }
-
+    @Transactional
     public void modificarEditorial(String id, String nombre) throws MiException {
         validar(nombre, id);
         Optional<Editorial> optionalEditorial = editorialRepositorio.findById(id);
@@ -48,5 +50,12 @@ public class EditorialServicio {
         List<Editorial> listaEditoriales=new ArrayList();
         listaEditoriales=editorialRepositorio.findAll();
         return listaEditoriales;
+    }
+    public Page<Editorial> obtenerPaginaDeEditoriales(int page, int size) {
+        PageRequest pageable = PageRequest.of(page, size);
+        return editorialRepositorio.findAll(pageable);
+    }
+    public Editorial getOne(String id){
+        return editorialRepositorio.getOne(id);
     }
 }
